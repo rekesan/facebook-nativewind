@@ -1,0 +1,6 @@
+{
+    "tailwindCSS.suggestions": true,
+    "tailwindCSS.experimental.classRegex": [
+        ["styled\\([^,)]+,([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+    ]
+}

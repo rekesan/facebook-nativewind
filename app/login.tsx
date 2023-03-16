@@ -5,11 +5,12 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
+import { useState } from "react";
+import { useRouter } from "expo-router";
+
 import { SvgFacebook, SvgSwr } from "../components/svg";
 import CustomButton from "../components/CustomButton";
-import { useState } from "react";
 import InputField from "../components/InputField";
-import { useRouter } from "expo-router";
 
 const Login = () => {
   const router = useRouter();
@@ -22,19 +23,19 @@ const Login = () => {
       onPress={() => (Keyboard.isVisible ? Keyboard.dismiss() : null)}
     >
       <KeyboardAvoidingView
-        className="w-full h-full bg-[#f2f2f2]"
+        className="w-full h-full bg-bleach-silk"
         behavior="height"
         keyboardVerticalOffset={-200}
       >
         {/* Top */}
-        <View className="flex-[2] justify-center items-end flex-row">
+        <View className="flex-2 justify-center items-end flex-row">
           <SvgFacebook size={80} />
         </View>
 
         {/* Mid */}
-        <View className="flex-[4] justify-center items-center gap-y-4">
+        <View className="flex-4 justify-center items-center gap-y-4">
           <InputField
-            className="w-[90%] bg-white border-[1px] text-base font-medium h-14 border-[#A5ADB3] rounded-md p-4"
+            className="w-9/10 bg-white border-1 text-base font-medium h-16 border-northern-light-grey rounded-md p-4"
             placeholder="Mobile number or email"
             autoComplete="username"
             textContentType="username"
@@ -42,7 +43,7 @@ const Login = () => {
           />
 
           <InputField
-            className="w-[90%] bg-white border-[1px] text-base font-medium h-14 border-[#A5ADB3] rounded-md p-4"
+            className="w-9/10 bg-white border-1 text-base font-medium h-16 border-northern-light-grey rounded-md p-4"
             placeholder="Password"
             autoComplete="password"
             textContentType="password"
@@ -52,28 +53,28 @@ const Login = () => {
 
           <CustomButton
             label="Log in"
-            className="bg-[#1a74e4] w-[90%]"
-            textStyle="text-white"
+            className="bg-bright-navy-blue w-9/10"
+            textStyle="text-bleach-silk"
           />
 
           <CustomButton
             label="Forgot password?"
-            className="p-2 w-[90%]"
-            textStyle="text-[#404040]"
+            className="p-2 w-9/10"
+            textStyle="text-bauhaus"
           />
         </View>
 
         {/* Bottom */}
-        <View className="flex-[1] justify-evenly items-center">
+        <View className="flex-1 justify-evenly items-center">
           <CustomButton
             label="Create new account"
-            className="p-3 border-[1px] border-[#1a74e4] w-[90%]"
-            textStyle="text-[#1a74e4]"
+            className="p-3 border-1 border-bright-navy-blue w-9/10"
+            textStyle="text-bright-navy-blue"
           />
           <View className="flex-row items-center">
             <SvgSwr size={26} />
-            <Text className="text-lg font-bold text-[#2e2e2e]">SWR</Text>
-            <Text className="text-lg text-[#4a4a4a]">TECH</Text>
+            <Text className="text-lg font-bold text-carbon-fiber">SWR</Text>
+            <Text className="text-lg text-shadowed-steel">TECH</Text>
           </View>
         </View>
       </KeyboardAvoidingView>

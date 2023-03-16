@@ -1,6 +1,5 @@
 import {
   KeyboardAvoidingView,
-  TextInput,
   View,
   Text,
   TouchableWithoutFeedback,
@@ -8,22 +7,9 @@ import {
 } from "react-native";
 import { SvgFacebook, SvgSwr } from "../components/svg";
 import CustomButton from "../components/CustomButton";
-import { styled } from "nativewind";
 import { useState } from "react";
 import InputField from "../components/InputField";
 import { useRouter } from "expo-router";
-
-const TopView = styled(View, "flex-[2] justify-center items-end flex-row");
-const MiddleView = styled(View, "flex-[4] justify-center items-center gap-y-4");
-const BottomView = styled(View, "flex-[1] justify-evenly items-center");
-const StyledInputField = styled(
-  InputField,
-  "w-[90%] bg-white border-[1px] text-base font-medium h-14 border-[#A5ADB3] rounded-md p-4"
-);
-
-const StyledText = styled(Text, "text-lg");
-const SWRText = styled(StyledText, "font-bold text-[#2e2e2e]");
-const TECHText = styled(StyledText, "text-[#4a4a4a]");
 
 const Login = () => {
   const router = useRouter();
@@ -41,20 +27,22 @@ const Login = () => {
         keyboardVerticalOffset={-200}
       >
         {/* Top */}
-        <TopView>
+        <View className="flex-[2] justify-center items-end flex-row">
           <SvgFacebook size={80} />
-        </TopView>
+        </View>
 
         {/* Mid */}
-        <MiddleView>
-          <StyledInputField
+        <View className="flex-[4] justify-center items-center gap-y-4">
+          <InputField
+            className="w-[90%] bg-white border-[1px] text-base font-medium h-14 border-[#A5ADB3] rounded-md p-4"
             placeholder="Mobile number or email"
             autoComplete="username"
             textContentType="username"
             onChangeText={setUsername}
           />
 
-          <StyledInputField
+          <InputField
+            className="w-[90%] bg-white border-[1px] text-base font-medium h-14 border-[#A5ADB3] rounded-md p-4"
             placeholder="Password"
             autoComplete="password"
             textContentType="password"
@@ -73,10 +61,10 @@ const Login = () => {
             className="p-2 w-[90%]"
             textStyle="text-[#404040]"
           />
-        </MiddleView>
+        </View>
 
         {/* Bottom */}
-        <BottomView>
+        <View className="flex-[1] justify-evenly items-center">
           <CustomButton
             label="Create new account"
             className="p-3 border-[1px] border-[#1a74e4] w-[90%]"
@@ -84,10 +72,10 @@ const Login = () => {
           />
           <View className="flex-row items-center">
             <SvgSwr size={26} />
-            <SWRText>SWR</SWRText>
-            <TECHText>TECH</TECHText>
+            <Text className="text-lg font-bold text-[#2e2e2e]">SWR</Text>
+            <Text className="text-lg text-[#4a4a4a]">TECH</Text>
           </View>
-        </BottomView>
+        </View>
       </KeyboardAvoidingView>
     </TouchableWithoutFeedback>
   );

@@ -55,6 +55,7 @@ const Login = () => {
             label="Log in"
             className="bg-bright-navy-blue w-9/10"
             textStyle="text-bleach-silk"
+            onPress={() => router.push("./home")}
           />
 
           <CustomButton

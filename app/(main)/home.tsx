@@ -48,10 +48,6 @@ const Home = () => {
           />
         </View>
 
-        {/* {postData.map((post, index) => (
-          <Post key={index} post={post} />
-        ))} */}
-
         <FlatList
           data={postData}
           renderItem={(post) => <Post key={post.index} post={post.item} date={dateToday}/>}
